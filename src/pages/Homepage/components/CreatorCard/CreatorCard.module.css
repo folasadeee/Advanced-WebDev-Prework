@@ -1,3 +1,35 @@
 .creatorCard {
-    background-color: red;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px 0;
+}
+.creatorCardText {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.creatorCard img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+    filter: brightness(0.8) saturate(80%);
+}
+
+.creatorCard img:hover {
+    filter: brightness(1) saturate(120%);
+    -webkit-transition: .2s -webkit-filter linear;
+}
+
+@media (prefers-color-scheme: dark) {
+    .creatorCard {
+        background-color: rgb(31, 31, 31);
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+    .creatorCard {
+        background-color: rgb(245, 245, 245);
+    }
+    
 }
