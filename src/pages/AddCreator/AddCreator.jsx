@@ -1,10 +1,18 @@
+import AddCreatorForm from "../components/AddCreatorForm";
+
+import styles from './AddCreator.module.css';
+
 const AddCreator = () =>
 
     {
 
     return (
         <>
-        <h1>Text</h1>
+
+        <div className={styles.formContainer}>
+        <AddCreatorForm />
+        </div>
+
         </>
     )
 
