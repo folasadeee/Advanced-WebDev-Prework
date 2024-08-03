@@ -1,36 +1,35 @@
-import { useState } from 'react'
-import potion from './assets/images/potion.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 
-import CreatorCard from './pages/Homepage/components/CreatorCard/CreatorCard';
+import Homepage from './pages/Homepage/Homepage';
+import CreatorDetailsPage from './pages/CreatorDetailsPage/CreatorDetailsPage';
+
+function Routes() {
+  let routes = useRoutes([
+    {
+      path: '/',
+      element: <Homepage />,
+      // children: [
+      //   {
+      //     path: 'details',
+      //     element: <CreatorDetailsPage />,
+      //   },
+      // ],
+    },
+    { path: 'about', element: <h1>About</h1> },
+    { path: 'details', element: <CreatorDetailsPage />},
+    { path: '*', element: <h1>Page Not Found</h1> },
+  ]);
+
+  return routes;
+}
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <header className="hero">
-      <section className="hero-text-container">
-         <h1>Welcome to Creatorverse.</h1>
-         <p>Discover, connect, and share your gaming journey. Join a community of gamers and streamers, showcase your profile, and find new friends. Your adventure starts here!</p>
-         <section className="grid">
-          <button>One</button>
-          <button className="secondary">Two</button>
-         </section>
-        </section>
-          <img src={potion} alt="potion" />
-    </header>
-     <main>
-     
-     <section className="creator-card-container">
-
-     <CreatorCard name="Folasade Goddard" description="I love puppy" />
-     <CreatorCard name="Folasade Goddard" description="I love puppy" />
-     <CreatorCard name="Folasade Goddard" description="I love puppy" />
-      </section>
-      </main>
-    </>
-  )
+    <Router>
+      <Routes />
+    </Router>
+  );
 }
 
 export default App;
