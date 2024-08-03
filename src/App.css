@@ -1,0 +1,12 @@
+html {
+  background: #171515 url("https://www.transparenttextures.com/patterns/stardust.png");
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    background: #ebebdc url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+  }
+}
+
+
+

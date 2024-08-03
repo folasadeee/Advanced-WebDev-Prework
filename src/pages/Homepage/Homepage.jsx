@@ -1,11 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import potion from './../../assets/images/potion.svg';
 import styles from './styles/Homepage.module.css';
+
+import { supabase } from '../../client.js';
 
 import CreatorCard from './components/CreatorCard/CreatorCard';
 
 const Homepage = () => {
-  const [count, setCount] = useState(0)
+
+  const [creators, setCreators] = useState([]);
+
+  useEffect(
+    
+    () => {
+    const fetchCreators = async () => {
+      let {data: creators, error} = await supabase.from('creators').select('*').order('created_at', {ascending: true});
+      
+      if (error) console.log('error', error);
+
+      setCreators(creators);
+    }
+    fetchCreators();
+  } 
+  ,
+  [creators]);
 
   return (
     <>
@@ -24,9 +42,18 @@ const Homepage = () => {
      
      <section className={styles.creatorCardContainer}>
 
-     <CreatorCard name="Folasade Goddard" description="I love puppy" />
-     <CreatorCard name="Folasade Goddard" description="I love puppy" />
-     <CreatorCard name="Folasade Goddard" description="I love puppy" />
+      {creators.map((creator) => (
+        <CreatorCard 
+          key={creator.id}
+          id={creator.id}
+          avatar={creator.imageURL}
+          url={creator.url}
+          name={creator.name}
+          description={creator.description}
+        />
+      ))}
+    
+
       </section>
       </main>
     </>
