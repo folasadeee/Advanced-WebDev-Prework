@@ -26,6 +26,12 @@ const AddCreatorForm = () => {
             console.log('error', error);
         }
 
+        else {
+            console.log('data', data);
+            alert('Creator added successfully!');
+            window.location.href = '/';
+        }
+
 
     }
 
@@ -33,27 +39,30 @@ const AddCreatorForm = () => {
         <>
 
         <form onSubmit={handleSubmit}>
-        <h1>Text</h1>
+        <h1>Add New Creator</h1>
+        <p>
+            Use this form to add a new creator to the Creatorverse!
+        </p>
             <label>
-                Name:
+                Name
                 <input type="text" name="name" id="name" required />
             </label>
             <label>
-                Url:
+                Url
                 <input type="text" name="url" id="url" required />
             </label>
             <label>
-                Description:
+                Description
                 <textarea type="text" name="description" id="description" rows="5" cols="33" required />
             </label>
 
             <label>
-                Image URL:
+                Image URL
                 <input type="text" name="imageURL" id="imageURL" />
             </label>
 
             <button type="submit">Add Creator</button>
-            <button type="reset">Clear</button>
+            <button type="reset">Clear Form</button>
             </form>
         </>
     )

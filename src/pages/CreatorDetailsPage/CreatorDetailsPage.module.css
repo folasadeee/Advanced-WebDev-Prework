@@ -1,0 +1,55 @@
+.creatorDetailsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.creatorCard {
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px 0;
+    background: 
+        url("https://www.transparenttextures.com/patterns/bedge-grunge.png") repeat, 
+        linear-gradient(#ED1C69 30%, #FFFFFF 25%);
+    width: 50vw;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5% 5%;
+}
+
+.creatorAvatar {
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 5px 0 rgba(0, 79, 59, 0.3);
+    filter: saturate(110%);
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.creatorName {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Press Start 2P', system-ui;
+    margin: 1em 0;
+}
+
+.creatorDescription {
+    text-align: justify;
+    
+    font-size: 1em;
+}
+
+.modalButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}

@@ -6,6 +6,9 @@
     background: #003638 url("https://www.transparenttextures.com/patterns/always-grey.png");
     color: white !important;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    margin-bottom: 3%;
+
 }
 
 .navBar a {
@@ -27,4 +30,19 @@
     font-size: 1.5em;
     font-weight: bold;
     color: rgb(235, 235, 235);
+}
+
+.links {
+    display: flex;
+    gap: 1em;
+}
+
+.links a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #efff79;
 }

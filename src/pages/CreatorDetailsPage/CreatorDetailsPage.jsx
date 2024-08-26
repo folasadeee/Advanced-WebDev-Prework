@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 import { supabase } from '../../client';
+
+import styles from './CreatorDetailsPage.module.css';
 
 const CreatorDetailsPage = () => {
 
@@ -42,13 +44,30 @@ const CreatorDetailsPage = () => {
 
 
     return (
-        <div>
-            <h1>Creator Details Page</h1>
-            {creatorDetails.name && (
-                <div>
-                    {creatorDetails.name}
+        <div className={styles.creatorDetailsContainer}>
+            {creatorDetails && (
+                <div className={styles.creatorCard}>
+                    <img src={creatorDetails.imageURL} alt="creator-avatar" className={styles.creatorAvatar}/>
+                    <h1 className={styles.creatorName}>{creatorDetails.name}</h1>
+                   <p className={styles.creatorDescription}>
+                    {creatorDetails.description}
+                    </p>
+
+                    <div className={styles.buttonContainer}>
+                    <Link
+                    to={creatorDetails.url}>
+                    <button>Visit Creator</button>
+                    </Link>
+                    <Link 
+                    to={`/edit/${creatorDetails.id}`}
+                    key={creatorDetails.id}
+                    ><button class="secondary">Edit Details</button>
+                        </Link>
+                        </div>
+
                     </div>
                     )}
+                    
         </div>
     )
 }
