@@ -5,6 +5,21 @@
     margin: 1em 2em;
   }
   
+.addNewButton {
+    background-color: #cd1553;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .addNewButton:hover {
+    background-color: #b20e45;
+  }
+
   .hero {
     background-color: #003638;
     background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
@@ -24,7 +39,7 @@
   
   .hero h1 {
     text-transform: uppercase;
-        font-size: 3.5em;
+        font-size: 2.5em;
         font-weight: bold;
         background-image: linear-gradient(
           70deg,

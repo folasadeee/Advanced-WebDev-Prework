@@ -1,0 +1,59 @@
+.deleteCreatorButton {
+    background-color: #f44336 !important;
+    border: none !important;
+    color: white;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.modalButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+dialog .deleteCreatorButton {
+    width: 20% !important;
+}
+
+.cancelButton {
+    border: none;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.deleteCreatorButton:hover {
+    background-color: #d32f2f;
+}
+
+
+.editCreatorForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 5px 0;
+    background-color: #161a22;
+
+}
+
+.editCreatorForm input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+}
+
+.editCreatorForm button {
+    padding: 0.5em;
+}
+
+.editCreatorForm h1 {
+    text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+    .editCreatorForm {
+      background-color: #ffffff;
+    }
+  }

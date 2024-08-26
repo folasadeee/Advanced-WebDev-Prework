@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import potion from './../../assets/images/potion.svg';
 import styles from './styles/Homepage.module.css';
 
+import { Link } from 'react-router-dom';
+
 import { supabase } from '../../client.js';
 
 import CreatorCard from './components/CreatorCard/CreatorCard';
@@ -23,17 +25,19 @@ const Homepage = () => {
     fetchCreators();
   } 
   ,
-  [creators]);
+  []);
 
   return (
     <>
     <header className={styles.hero}>
       <section className={styles.heroTextContainer}>
-         <h1>Mitch is cool.</h1>
-         <p>Discover, connect, and share your gaming journey. Join a community of gamers and streamers, showcase your profile, and find new friends. Your adventure starts here!</p>
+         <h1>Game like a girl.</h1>
+         <p>Welcome to HerUniverse! Here you can, join a thriving community where female gamers and streamers shine. Whether you’re a seasoned pro or just starting out, everyone is welcome to embark on their adventure here</p>
          <section className="grid">
-          <button>One</button>
-          <button className="secondary">Two</button>
+          <Link
+          to="/add">
+            <button className={styles.addNewButton}>Add New Creator</button>
+          </Link>
          </section>
         </section>
           <img src={potion} alt="potion" />

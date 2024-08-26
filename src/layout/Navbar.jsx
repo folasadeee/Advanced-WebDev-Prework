@@ -12,12 +12,12 @@ const Navbar = () => {
 <img src={logo} className={styles.navBarLogo}/>
 <Link
 to="/">
-    <span class={styles.logoText}>Creatorverse</span>
+    <span class={styles.logoText}>HerUniverse</span>
     </Link>
     </div>
-        <div className="links">
-            <a href="/">Home</a>
-            <a href="/add">Add</a>
+        <div className={styles.links}>
+            <a href="/">Home</a> ·
+            <a href="/add">Add New Creator</a>
         </div>
         </nav>
 
